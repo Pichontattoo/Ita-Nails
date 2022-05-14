@@ -219,7 +219,7 @@ body {
       background-size: cover;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   .inicio h1 {
     background-color: #d84727;
     background-image: linear-gradient(
