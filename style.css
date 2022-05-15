@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "bubblez";
   src: url(./Fonts/Bubblez.otf);
@@ -16,9 +20,17 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: #ffe0b5;
-  background-image: url("./images/back.jpg");
-  background-size: cover;
+  background: rgb(249,210,191);
+  background: linear-gradient(297deg, rgba(193,152,132,1) 0%, rgba(218,148,109,1) 49%, rgba(247,247,247,1) 100%);
+  background-size: 200% 200%;
+  animation: back 10s ease-in-out infinite;
+  z-index: -2;
+}
+
+@keyframes back { 
+  0%{background-position:10% 0%}
+  50%{background-position:91% 100%}
+  100%{background-position:10% 0%}
 }
 .inicio {
   position: fixed;
@@ -146,7 +158,18 @@ body {
   box-shadow: 0px 25px 40px -10px rgba(0, 0, 0, 0.55);
 }
 
-
+.btn {
+  margin: auto;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #d84727;
+  font-family: "avocado";
+  font-size: 1.3rem;
+  color: antiquewhite;
+  cursor: pointer;
+}
 
 .btn:hover {
   background-color: rgb(255, 111, 79);
@@ -160,18 +183,6 @@ body {
   margin: auto;
 }
 
-.btn {
-  margin: auto;
-  width: 8rem;
-  height: 2rem;
-  border-radius: 1rem;
-  border: none;
-  background-color: #d84727;
-  font-family: "avocado";
-  font-size: 1.3rem;
-  color: antiquewhite;
-  cursor: pointer;
-}
 
 .info p {
   width: 50%;
@@ -207,19 +218,145 @@ body {
   z-index: 4;
 }
 
-.form {
+.contenedor {
+  position: relative;
   width: 100%;
-      height: 100%;
-      padding: 15%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      background-image: url("./images/back.jpg");
-      background-size: cover;
+  height: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
 }
 
-@media screen and (max-width: 600px) {
+.contenedor:after{
+  content: "";
+  position: absolute;
+  Left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/bg.jpg') no-repeat center;
+  background-size: cover;
+  z-index: -2;
+  filter: blur(50px);
+}
+
+.contact-box{
+  max-width: 850px;
+  max-height: 100%;
+  padding: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+
+
+.left{
+  height: 100%;
+  background: url('./images/bg.jpg') no-repeat center;
+  background-size: cover;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.form {
+  width: 80%;
+  max-height: 80%;
+  margin: auto;
+  padding: 5%;
+}
+.right{
+  padding: 25px 40px;
+  max-height: 100%;
+}
+
+.rigth h2 {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.rigth h2:after{
+   content: "";
+   position: absolute;
+   Left: 50%;
+   bottom: 0;
+   transform: translatex(-50%);
+   height: 4px;
+   width: 50px;
+   border-radius: 2px;
+   background-color: #2ecc71;
+}
+
+.field{
+  width: 100%;
+  margin: auto;
+ padding: 0.5rem 1rem;
+  outline: none;
+  border: transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(230, 230, 230, e.6);
+ font-size: 1.1rem;
+ margin-bottom: 22px;
+  transition: .3s;
+}
+
+.field:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.field:focus{
+  background-color: #fff;
+  border: 2px solid rgba(30, 85, 250, 0.47);
+}
+
+.area{
+  max-height: 100%;
+}
+
+.bttn {
+width: 80%;
+margin: auto;
+padding: 0.5rem 1rem;
+font-size: 1.5rem;
+font-family: "avocado";
+color: #f7d4bc ;
+background-color: #ff2f00;
+border-radius: 15px;
+cursor: pointer;
+outline: none;
+border: none;
+transition: .3s;
+}
+
+
+.bttn:hover{
+background-color: #d84727;
+}
+
+.foot {
+  width: 100%;
+  height: 12%;
+  background-color: #d84727;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1%;
+}
+
+.foot a img {
+  width: 40px;
+  margin: auto;
+}
+
+
+@media screen and (max-width: 880px) {
   .inicio h1 {
     background-color: #d84727;
     background-image: linear-gradient(
@@ -294,4 +431,18 @@ body {
     margin: auto;
     text-align: center;
   }
+
+  .contenedor {
+    min-width: 100%;
+    min-height: 100%;
+    padding: 10%;
+  }
+  .contact-box {
+   grid-template-columns: 1fr;
+  }
+.left{
+   height: 200px;
+   border-top-right-radius: 15px;
+   border-bottom-left-radius: 0px;
+}
 }
