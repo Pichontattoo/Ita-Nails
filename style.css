@@ -23,7 +23,7 @@ body {
   background: rgb(249,210,191);
   background: linear-gradient(297deg, rgba(193,152,132,1) 0%, rgba(218,148,109,1) 49%, rgba(247,247,247,1) 100%);
   background-size: 200% 200%;
-  animation: back 10s ease-in-out infinite;
+  animation: back 5s ease-in-out infinite;
   z-index: -2;
 }
 
@@ -357,6 +357,10 @@ background-color: #d84727;
 
 
 @media screen and (max-width: 880px) {
+
+  body {
+    animation: none;
+  }
   .inicio h1 {
     background-color: #d84727;
     background-image: linear-gradient(
