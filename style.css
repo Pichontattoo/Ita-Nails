@@ -586,6 +586,10 @@ background-color: #d84727;
     }
   }
 
+  .modal {
+    width: 60%;
+  }
+
   .mobil-init {
     display: flex;
     width: 90%;
