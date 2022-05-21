@@ -105,16 +105,21 @@ body {
 }
 
 
-
 nav {
     width: 100%;
     position: fixed;
+    top: 0;
     display: flex;
     align-items:center;
     justify-content: space-around;
-    min-height:10vh;
+    min-height:12vh;
     background-color: rgba(255, 224, 181, 1);
+    transition: .8s;
     z-index: 5;
+}
+
+.hide {
+  top: -200px;
 }
 
 .ham{
@@ -186,6 +191,9 @@ nav {
         align-items: flex-end;
         padding-top: 25px;
         padding-bottom: 25px;
+    }
+    .hide {
+      top: -200px;
     }
 
 .logo {
@@ -267,6 +275,7 @@ nav {
 }
 
 .card {
+  position: absolute;
   width: 80%;
   height: 80%;
   background-color: antiquewhite;
@@ -297,6 +306,17 @@ nav {
 .mobil-init {
   display: none;
 
+}
+
+
+
+@keyframes flip-diagonal-2-br {
+  0% {
+    transform: rotate3d(-1, 1, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(-1, 1, 0, 180deg);
+  }
 }
 
 .card img {
@@ -356,7 +376,7 @@ nav {
   background-image: url("./images/back-gallery.jpg");
   background-size: cover;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   z-index: 1;
 }
@@ -555,6 +575,10 @@ background-color: #d84727;
   font-family: "bubblez";
   color: #ff2f00;
 }
+
+.modal-textos p {
+  margin-top: 5%;
+}
 .close {
   width: 25px;
   height: 25px;
@@ -631,8 +655,8 @@ background-color: #d84727;
     background-color: rgba(255, 224, 181, 0.6);
   }
 
-  .navbar {
-    display: none;
+  .hide {
+    top: 0;
   }
 
   .gallery {

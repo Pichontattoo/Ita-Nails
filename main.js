@@ -2,6 +2,21 @@ const ham = document.querySelector('.ham');
 const enlaces = document.querySelector('.enlaces-menu');
 const barras = document.querySelectorAll('.ham span');
 
+const nav = document.getElementById('navbar')
+
+let prev = window.scrollY
+
+window.addEventListener("scroll", function () {
+
+let current = window.scrollY
+if (prev < current) {
+    nav.classList.add("hide");
+  } else {
+    nav.classList.remove("hide");
+  }
+
+  prev = current
+  }); 
 
 
 ham.addEventListener('click', () => {
